@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     html {
-        --color-primary: Gray;
-        --color-secondary: Red; 
-        --color-accent-one: Orange;
-        --color-accent-two: Black; 
-        --color-accent-three: Gray; 
+        --color-primary: #F2F2F2;
+        --color-secondary: #1485E0; 
+        --color-accent-one: #A2A685;
+        --color-accent-two: #274001; 
+        --color-accent-three: #0460D9; 
         height: 100%;
     }
 
