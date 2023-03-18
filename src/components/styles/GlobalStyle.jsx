@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
         --color-white: #FFFFFF;
         --color-black: #000000;
         height: 100%;
-        min-height: 100vh
+        min-height: 100vh;
         margin: 0;
         padding: 0;
         font-family: Lato, sans-serif;

@@ -1,7 +1,7 @@
 import React from "react";
-import BaseButton from "./styles/Buttons";
-import PrimaryButton from "./styles/PrimaryButton";
-import Header from "./components/Header";
+import BaseButton from "./components/styles/Buttons";
+import PrimaryButton from "./components/styles/PrimaryButton";
+import Header from "./components/layout/Header";
 
 function App() {
   return (
