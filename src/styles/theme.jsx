@@ -7,6 +7,8 @@ const theme = {
     accentOne: 'var(--color-accent-one)',
     accentTwo: 'var(--color-accent-two)',
     accentThree: 'var(--color-accent-three)',
+    white: 'var(--color-white)',
+    black: 'var(--color-black)'
   },
 };
 
