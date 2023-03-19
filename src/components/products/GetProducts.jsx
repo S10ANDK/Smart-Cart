@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const API_URL = 'https://api.noroff.dev/api/v1/online-shop';
 
-function Products() {
+function ProductsDisplayed() {
     const [products, setProducts] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false)
@@ -52,4 +52,4 @@ function Products() {
     return null
 }
 
-export default Products;
+export default ProductsDisplayed;

@@ -1,22 +1,18 @@
 import React from "react";
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
-import Header from "./components/Header";
-import Products from "./components/products/GetProducts";
-// import Layout from "./components/Layout";
+import Layout from "./components/Layout";
+import ProductsDisplayed from "./components/products/GetProducts";
 
-function App() {
+function Home() {
   return (
-    // <Routes>
-    //   <Route path="/" element={<Layout />}>
     <>
       <div>
-        <Header />
         <h1>Hello world!</h1>
         <h2>Second we testing</h2>
         {/* <h3>Third stuff yes</h3>
-        <h4>This is a drill</h4> */}
+    <h4>This is a drill</h4> */}
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -30,11 +26,34 @@ function App() {
         </p>
         <BaseButton>Button</BaseButton>
         <PrimaryButton>Primary</PrimaryButton>
-        <Products />
+        <ProductsDisplayed />
       </div>
     </>
-    //   </Route>
-    // </Routes>
+  );
+}
+
+function Cart() {
+  return <div>Cart</div>;
+}
+
+function Products() {
+  return <div>Products</div>;
+}
+
+function Contact() {
+  return <div>Contact Form</div>;
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="products" element={<Products />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   );
 }
 
