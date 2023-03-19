@@ -1,30 +1,41 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const url = 'https://api.noroff.dev/api/v1/online-shop';
 
 function Products() {
     const [products, setProducts] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState(false)
+
     useEffect(() => {
 
         async function getProducts(url) {
-
-            const response = await fetch(url);
-            const results = await response.json();
-            setProducts(results);
-            console.log((products));
+            try {
+                setIsLoading(true);
+                const response = await fetch(url);
+                const results = await response.json();
+                setProducts(results);
+                // console.log(products);
+            } catch (error) {
+                setIsError(true);
+            } finally {
+                setIsLoading(false);
+            }
         }
 
         getProducts(url);
-    }, )
+    }, [])
 
-    // if (products.length > 24) {
-    //     return <div>
-    //         <p>{products.title}</p>
-    //     </div>
-    // }
+    if (isLoading) {
+        return <div>Loading...</div>
+    }
 
-    if (products.length > 24) {
+    if (isError) {
+        return <div>There was an error.</div>
+    }
+
+    if (products.length > 0) {
         return <div>{products.map((product) => (
             <>
             <h3>{product.title}</h3>

@@ -1,7 +1,7 @@
 import React from "react";
 import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
-import Header from "./components/layout/Header";
+import Header from "./components/Header";
 import Products from "./components/products/GetProducts";
 
 function App() {
