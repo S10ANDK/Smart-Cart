@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
 import Layout from "./components/Layout";
-import ProductsDisplayed from "./components/products/GetProducts";
+import ProductsDisplayed from "./components/Products";
 
 function Home() {
   return (

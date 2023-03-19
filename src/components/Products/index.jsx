@@ -44,7 +44,7 @@ function ProductsDisplayed() {
             <>
             <h3>{product.title}</h3>
             
-            <img src={product.imageUrl} alt={product.title} />
+            <img style={{ width: '300px' }} src={product.imageUrl} alt={product.title} />
             </>
         ))}</div>
     }
