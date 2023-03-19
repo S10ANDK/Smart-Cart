@@ -1,5 +1,5 @@
-import LogoIcon from '../../assets/logo_icon.png';
-import { Logo } from './Header.styled';
+import LogoIcon from '../../../assets/logo_icon.png';
+import { Logo } from './index.styled';
 
 function Header () {
     return (

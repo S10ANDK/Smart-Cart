@@ -2,6 +2,7 @@ import React from "react";
 import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
 import Header from "./components/layout/Header";
+import Products from "./components/products/GetProducts";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <BaseButton>button</BaseButton>
+        <BaseButton>Button</BaseButton>
         <PrimaryButton>Primary</PrimaryButton>
+        <Products />
       </div>
     </>
   );
