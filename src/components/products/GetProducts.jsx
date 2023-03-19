@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const url = 'https://api.noroff.dev/api/v1/online-shop';
+const API_URL = 'https://api.noroff.dev/api/v1/online-shop';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ function Products() {
             }
         }
 
-        getProducts(url);
+        getProducts(API_URL);
     }, [])
 
     if (isLoading) {
@@ -33,6 +33,10 @@ function Products() {
 
     if (isError) {
         return <div>There was an error.</div>
+    }
+
+    if (products.length <= 0) {
+        return <div>No products to show.</div>
     }
 
     if (products.length > 0) {

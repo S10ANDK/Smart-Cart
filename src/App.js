@@ -1,11 +1,15 @@
 import React from "react";
+// import { Routes, Route } from "react-router-dom";
 import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
 import Header from "./components/Header";
 import Products from "./components/products/GetProducts";
+// import Layout from "./components/Layout";
 
 function App() {
   return (
+    // <Routes>
+    //   <Route path="/" element={<Layout />}>
     <>
       <div>
         <Header />
@@ -29,6 +33,8 @@ function App() {
         <Products />
       </div>
     </>
+    //   </Route>
+    // </Routes>
   );
 }
 
