@@ -40,11 +40,11 @@ function ProductsDisplayed() {
     }
 
     if (products.length > 0) {
-        return <div>{products.map((product) => (
+        return <div style={{ margin: 'auto', width: '500px'}}>{products.map((product) => (
             <>
             <h3>{product.title}</h3>
             
-            <img style={{ width: '300px' }} src={product.imageUrl} alt={product.title} />
+            <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
             </>
         ))}</div>
     }
