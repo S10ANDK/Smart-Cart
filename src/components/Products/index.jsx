@@ -40,7 +40,7 @@ function ProductsDisplayed() {
     }
 
     if (products.length > 0) {
-        return <div style={{ margin: 'auto', width: '500px'}}>{products.map((product) => (
+        return <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
             <>
             <h3>{product.title}</h3>
             

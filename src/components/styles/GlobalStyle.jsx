@@ -14,12 +14,15 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: Lato, sans-serif;
+        background: var(--color-primary);
         
     }
 
     body {
         height: 100%;
         background: var(--color-primary);
+        max-width: 1000px;
+        margin: auto;
     }
 
     h1 {
@@ -33,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        font-family: Lato, sans serif;
+        font-family: Lato, sans-serif;
     }
 `;
 

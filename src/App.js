@@ -12,7 +12,7 @@ function Home() {
         <h1>Hello world!</h1>
         <h2>Second we testing</h2>
         {/* <h3>Third stuff yes</h3>
-    <h4>This is a drill</h4> */}
+        <h4>This is a drill</h4> */}
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -36,10 +36,6 @@ function Cart() {
   return <div>Cart</div>;
 }
 
-function Products() {
-  return <div>Products</div>;
-}
-
 function Contact() {
   return <div>Contact Form</div>;
 }
@@ -50,7 +46,6 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="products" element={<Products />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
