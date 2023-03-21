@@ -1,14 +1,28 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import LogoIcon from '../../../assets/logo_icon.png';
 import ShoppingCartIcon from '../../../assets/shopping-cart.png';
 import Nav from './Nav/index.jsx';
 import * as S from './index.styled';
 
 function Header () {
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsSticky(window.pageYOffset > 0);
+      };
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
     return (
         <>
-            <header>
-                <S.HeaderWrapper>
+            <S.Header className={isSticky ? 'sticky' : ''}>
+                <S.HeaderContentWrapper>
                     <S.LogoAndNavWrapper>
                         <S.NavWrapper>
                             <Nav />
@@ -22,8 +36,8 @@ function Header () {
                             <S.CartIcon src={ShoppingCartIcon} />
                         </Link>
                     </S.CartWrapper>
-                </S.HeaderWrapper>
-            </header> 
+                </S.HeaderContentWrapper>
+            </S.Header> 
         </>
     )
 }

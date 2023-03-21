@@ -45,8 +45,8 @@ export const NavBox = styled.nav`
     position: fixed;
     top: 0;
     left: 0;
-    width: 90%;
-    /* max-width: 250px; */
+    width: 100%;
+    /* max-width: 50%; */
     height: auto;
     margin-top: 75px;
     padding: 25px 0px;
@@ -69,11 +69,16 @@ export const NavBox = styled.nav`
 
 export const NavList = styled.ul`
     list-style: none;
-    padding: 0px 0px 0px 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    padding: 0;
+
+    @media (min-width: 500px) {
+        text-align: center;
+    }
 
     @media (min-width: 1000px) {
-        padding: 0;
-        display: flex;
         flex-direction: row;
         justify-content: right;
         margin-right: 40px;
@@ -81,7 +86,7 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-    margin: 30px 10px;
+    margin: 20px 0px;
     text-decoration: none;
 
     @media (min-width: 1000px) {
@@ -94,6 +99,7 @@ export const NavLink = styled(Link)`
     text-decoration: none;
     color: white;
     padding: 15px 10px;
+    font-size: 1.3rem;
 
     :hover {
         text-decoration: underline;
@@ -101,6 +107,7 @@ export const NavLink = styled(Link)`
     }
 
     @media (min-width: 1000px) {
+        font-size: 1.2rem;
         color: var(--color-black);
         padding: 0;
     }

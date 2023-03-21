@@ -5,11 +5,12 @@ import PrimaryButton from "./components/styles/PrimaryButton";
 import Layout from "./components/Layout";
 import ProductsDisplayed from "./components/Products";
 import IndividualProduct from "./components/IndividualProduct";
+import Div from "./components/styles/Div";
 
 function Home() {
   return (
     <>
-      <div>
+      <Div>
         <h1>Hello world!</h1>
         <h2>Second we testing</h2>
         {/* <h3>Third stuff yes</h3>
@@ -25,10 +26,10 @@ function Home() {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <BaseButton>Button</BaseButton>
-        <PrimaryButton>Primary</PrimaryButton>
+        {/* <BaseButton>Button</BaseButton>
+        <PrimaryButton>Primary</PrimaryButton> */}
         <ProductsDisplayed />
-      </div>
+      </Div>
     </>
   );
 }

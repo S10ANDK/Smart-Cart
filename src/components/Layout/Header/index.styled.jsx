@@ -1,19 +1,31 @@
 import styled from "styled-components";
-// import { NavBox, NavList, NavListItem, NavLink } from "./Nav/index.styled";
 
-export const HeaderWrapper = styled.div`
+export const Header = styled.header`
+    background: var(--color-primary);
+    top: 0;
+    z-index: 10;
+
+    &.sticky {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    @media (min-width: 1000px) {
+    border-bottom: 4px solid var(--color-accent-one);
+    }
+`;
+
+export const HeaderContentWrapper = styled.div`
     position: sticky;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
     max-width: 1000px;
     margin: auto;
-
-
-    @media (min-width: 1000px) {
-        border-bottom: 4px solid var(--color-accent-one);
-        border-radius: round;
-    }
 `;
 
 export const LogoAndNavWrapper = styled.div`
@@ -74,5 +86,3 @@ export const CartIcon = styled.img`
         }
     }
 `;
-
-// export { NavBox, NavList, NavListItem, NavLink };

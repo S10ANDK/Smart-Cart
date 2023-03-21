@@ -21,22 +21,25 @@ const GlobalStyle = createGlobalStyle`
     body {
         height: 100%;
         background: var(--color-primary);
-        max-width: 1000px;
         margin: auto;
     }
 
     h1 {
         font-family: Montserrat, sans-serif;
         font-size: 3rem;
-        color: var(--color-accent-one);
+        color: var(--color-secondary);
+        text-align: center;
     }
 
     h2 {
         font-family: Cabin, sans-serif;
+        text-align: center;
     }
 
     p {
         font-family: Lato, sans-serif;
+        max-width: 600px;
+        margin: auto;
     }
 `;
 
