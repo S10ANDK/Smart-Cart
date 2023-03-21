@@ -51,7 +51,6 @@ export const NavBox = styled.nav`
     margin-top: 75px;
     padding: 25px 0px;
     transform: ${({ active }) => active ? 'translateX(0)' : 'translateX(-102%)' };
-    /* transform: ${({ closeOnClick }) => closeOnClick = 'translateX(-102%)' }; */
     transition: 0.2s ease-in-out;
     border-radius: 0px 15px 15px 0px;
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
@@ -77,7 +76,7 @@ export const NavList = styled.ul`
         display: flex;
         flex-direction: row;
         justify-content: right;
-        margin-right: 50px;
+        margin-right: 40px;
     }
 `;
 

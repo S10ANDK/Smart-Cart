@@ -8,6 +8,12 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     max-width: 1000px;
     margin: auto;
+
+
+    @media (min-width: 1000px) {
+        border-bottom: 4px solid var(--color-accent-one);
+        border-radius: round;
+    }
 `;
 
 export const LogoAndNavWrapper = styled.div`
@@ -60,7 +66,12 @@ export const CartIcon = styled.img`
     }
 
     @media (min-width: 1000px) {
-        margin-right: 0px;
+        margin-right: 10px;
+        transition: 0.3s ease-in-out;
+
+        :hover {
+            transform: rotate(-10deg);
+        }
     }
 `;
 
