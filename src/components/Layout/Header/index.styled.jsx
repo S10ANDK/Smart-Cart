@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
     margin: auto;
 `;
 
-export const LogoAndHamburgerMenuWrapper = styled.div`
+export const LogoAndNavWrapper = styled.div`
     display: flex;
     flex-direction: row;
 
@@ -28,11 +28,10 @@ export const Logo = styled.img`
 
     @media (min-width: 1000px) {
         margin: 10px 0px;
-        order: 1;
     }
 `;
 
-export const HamburgerButtonWrapper = styled.div`
+export const NavWrapper = styled.div`
     display: flex;
     align-items: center;
     margin: 0px 0px 0px 15px;
