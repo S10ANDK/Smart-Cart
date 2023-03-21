@@ -14,11 +14,11 @@ function Header () {
                         <S.HamburgerButtonWrapper>
                             <HamburgerButton />
                         </S.HamburgerButtonWrapper>
-                        <Link to={"/"}>
+                        <Link style={{ order: 1 }} to={"/"}>
                             <S.Logo src={LogoIcon} alt="Logo" />
                         </Link>
                     </S.LogoAndHamburgerMenuWrapper>
-                    <Nav />
+                    {/* <Nav /> */}
                     <S.CartWrapper>
                         <Link to={"/cart"}>
                             <S.CartIcon src={ShoppingCartIcon} />

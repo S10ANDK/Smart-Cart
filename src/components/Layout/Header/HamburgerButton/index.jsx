@@ -4,6 +4,7 @@ import Nav from '../Nav'
 
 const HamburgerButton = () => {
     const [active, setActive] = useState(false)
+    const [openNavbar, setOpenNavbar] = useState(true)
 
     return (
         <>
@@ -12,7 +13,7 @@ const HamburgerButton = () => {
             <div />
             <div />
         </HamburgerIcon>
-        <Nav active={active} />
+        <Nav active={active} openNavbar={openNavbar} onclick={() => setOpenNavbar(!openNavbar)} />
         </>
     )
 }

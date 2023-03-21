@@ -1,6 +1,8 @@
-import * as S from './index.styled'
+import * as S from './index.styled';
+// import { useState } from 'react';
 
 const Nav = ({ active }) => {
+
 
     return (
         <S.NavBox active={active}>

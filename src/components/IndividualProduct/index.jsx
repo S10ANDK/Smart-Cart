@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
 
-
-
-function ProductsDisplayed() {
+function IndividualProduct() {
     const [products, setProducts] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
+    let { id } = useParams();
 
     useEffect(() => {
 
@@ -18,7 +17,7 @@ function ProductsDisplayed() {
                 const response = await fetch(url);
                 const results = await response.json();
                 setProducts(results);
-                console.log(products);
+                // console.log(products);
             } catch (error) {
                 setIsError(true);
             } finally {
@@ -26,8 +25,8 @@ function ProductsDisplayed() {
             }
         }
 
-        getProducts(API_URL);
-    }, [])
+        getProducts(`${API_URL}/${id}`);
+    }, [id])
 
     if (isLoading) {
         return <div>Loading...</div>
@@ -45,10 +44,9 @@ function ProductsDisplayed() {
         return <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
             <>
             <div key={product.id}>
-                <h3>{product.title}</h3>
                 <div>id: {product.id}</div>
+                <h3>{product.title}</h3>
                 <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
-                <p>Price: {product.price}</p>
             </div>
 
             </>
@@ -58,4 +56,4 @@ function ProductsDisplayed() {
     return null
 }
 
-export default ProductsDisplayed;
+export default IndividualProduct;

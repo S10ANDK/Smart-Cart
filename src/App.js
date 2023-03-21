@@ -4,6 +4,7 @@ import BaseButton from "./components/styles/Buttons";
 import PrimaryButton from "./components/styles/PrimaryButton";
 import Layout from "./components/Layout";
 import ProductsDisplayed from "./components/Products";
+import IndividualProduct from "./components/IndividualProduct";
 
 function Home() {
   return (
@@ -40,6 +41,10 @@ function Contact() {
   return <div>Contact Form</div>;
 }
 
+function Product() {
+  return <div>Individual product</div>;
+}
+
 function App() {
   return (
     <Routes>
@@ -47,6 +52,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="product/:id" element={<IndividualProduct />} />
       </Route>
     </Routes>
   );

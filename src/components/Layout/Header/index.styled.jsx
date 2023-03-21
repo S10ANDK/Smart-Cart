@@ -13,6 +13,12 @@ export const HeaderWrapper = styled.div`
 export const LogoAndHamburgerMenuWrapper = styled.div`
     display: flex;
     flex-direction: row;
+
+    @media (min-width: 1000px) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex: 1;
+    }
 `;
 
 export const Logo = styled.img`
@@ -22,6 +28,7 @@ export const Logo = styled.img`
 
     @media (min-width: 1000px) {
         margin: 10px 0px;
+        order: 1;
     }
 `;
 
@@ -36,10 +43,6 @@ export const HamburgerButtonWrapper = styled.div`
 
     @media (min-width: 600px) {
         margin: 0px 15px 0px 25px;
-    }
-
-    @media (min-width: 1000px) {
-        display: none;
     }
 `;
 
