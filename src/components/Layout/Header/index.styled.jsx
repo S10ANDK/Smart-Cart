@@ -14,7 +14,7 @@ export const Header = styled.header`
     }
 
     @media (min-width: 1000px) {
-    border-bottom: 4px solid var(--color-accent-one);
+    border-bottom: 4px solid ${(props) => props.theme.color.accentOne};
     }
 `;
 

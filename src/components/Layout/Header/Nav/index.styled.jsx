@@ -40,7 +40,7 @@ export const HamburgerIcon = styled.div`
 
 export const NavBox = styled.nav`
     background: var(--color-accent-one);
-    color: white;
+    color: ${(props) => props.theme.color.white};
     position: fixed;
     top: 0;
     left: 0;
@@ -59,7 +59,7 @@ export const NavBox = styled.nav`
         padding: 0;
         transition: none;
         transform: ${({ active }) => active ? 'translateX(0)' : 'translateX(0)' };
-        background-color: var(--color-primary);
+        background-color: ${(props) => props.theme.color.primary};
         margin-top: 0;
         position: relative;
     }
@@ -89,14 +89,14 @@ export const NavListItem = styled.li`
     text-decoration: none;
 
     @media (min-width: 1000px) {
-        color: var(--color-black);
+        color: ${(props) => props.theme.color.black};
         margin: 10px;
     }
 `;
 
 export const NavLink = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: ${(props) => props.theme.color.white};
     padding: 15px 10px;
     font-size: 1.3rem;
 
@@ -106,12 +106,16 @@ export const NavLink = styled(Link)`
     }
 
     :visited {
-        color: white;
+        color: ${(props) => props.theme.color.white};
     }
 
     @media (min-width: 1000px) {
         font-size: 1.2rem;
-        color: var(--color-black);
+        color: ${(props) => props.theme.color.black};
         padding: 0;
+
+        :visited {
+        color: ${(props) => props.theme.color.black};
+    }
     }
 `;
