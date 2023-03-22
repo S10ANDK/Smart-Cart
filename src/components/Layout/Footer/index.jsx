@@ -1,11 +1,10 @@
+import StyledFooter from "./index.styled";
+
 function Footer () {
     return (
         <>
-            <footer>FOOTER</footer>
+            <StyledFooter><p>Created with React by: Stian Dille Kornbakk</p></StyledFooter>
         </>
-
-    
-
     )
 }
 
