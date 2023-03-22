@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-    background: var(--color-primary);
+    background: ${(props) => props.theme.color.primary};
     top: 0;
     z-index: 10;
 

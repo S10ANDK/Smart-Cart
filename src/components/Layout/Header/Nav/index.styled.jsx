@@ -41,12 +41,10 @@ export const HamburgerIcon = styled.div`
 export const NavBox = styled.nav`
     background: var(--color-accent-one);
     color: white;
-    /* text-align: center; */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /* max-width: 50%; */
     height: auto;
     margin-top: 75px;
     padding: 25px 0px;
@@ -76,6 +74,7 @@ export const NavList = styled.ul`
 
     @media (min-width: 500px) {
         text-align: center;
+        margin-left: 0;
     }
 
     @media (min-width: 1000px) {
@@ -104,6 +103,10 @@ export const NavLink = styled(Link)`
     :hover {
         text-decoration: underline;
         text-underline-offset: 5px;
+    }
+
+    :visited {
+        color: white;
     }
 
     @media (min-width: 1000px) {
