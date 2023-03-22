@@ -25,15 +25,24 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        font-family: Montserrat, sans-serif;
-        font-size: 3rem;
-        color: var(--color-secondary);
+        font-family: Cabin, sans-serif;
+        font-size: 2.3rem;
+        color: var(--color-black);
         text-align: center;
     }
 
     h2 {
-        font-family: Cabin, sans-serif;
+        font-family: Montserrat, sans-serif;
         text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a,
+    a:visited {
+        color: var(--color-black);
     }
 
     p {

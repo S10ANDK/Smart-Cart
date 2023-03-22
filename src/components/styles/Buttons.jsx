@@ -15,7 +15,7 @@ const BaseButton = styled.button`
     };
     
     @media (min-width: 768px) {
-        width: 100px;
+        width: 200px;
     };
 
 `;
