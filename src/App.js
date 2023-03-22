@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import BaseButton from "./components/styles/Buttons";
-import PrimaryButton from "./components/styles/PrimaryButton";
+// import BaseButton from "./components/styles/Buttons";
+// import PrimaryButton from "./components/styles/PrimaryButton";
 import Layout from "./components/Layout";
 import ProductsDisplayed from "./components/Products";
 import IndividualProduct from "./components/IndividualProduct";
@@ -48,10 +48,6 @@ function Contact() {
       <h1>Contact Form</h1>
     </Div>
   );
-}
-
-function Product() {
-  return <Div>Individual product</Div>;
 }
 
 function App() {
