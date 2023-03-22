@@ -12,7 +12,7 @@ function Home() {
     <>
       <Div>
         <h1>Hello world!</h1>
-        <h2>Second we testing</h2>
+        {/* <h2>Second we testing</h2> */}
         {/* <h3>Third stuff yes</h3>
         <h4>This is a drill</h4> */}
         <p>
@@ -35,15 +35,23 @@ function Home() {
 }
 
 function Cart() {
-  return <div>Cart</div>;
+  return (
+    <Div>
+      <h1>Cart</h1>
+    </Div>
+  );
 }
 
 function Contact() {
-  return <div>Contact Form</div>;
+  return (
+    <Div>
+      <h1>Contact Form</h1>
+    </Div>
+  );
 }
 
 function Product() {
-  return <div>Individual product</div>;
+  return <Div>Individual product</Div>;
 }
 
 function App() {
@@ -53,7 +61,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="product/:id" element={<IndividualProduct />} />
+        <Route path="products/:id" element={<IndividualProduct />} />
       </Route>
     </Routes>
   );

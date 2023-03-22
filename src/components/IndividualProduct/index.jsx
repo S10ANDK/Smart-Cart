@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Div from "../styles/Div";
+import PrimaryButton from "../styles/PrimaryButton";
 
 function IndividualProduct() {
     const [products, setProducts] = useState([]);
@@ -17,7 +19,7 @@ function IndividualProduct() {
                 const response = await fetch(url);
                 const results = await response.json();
                 setProducts(results);
-                // console.log(products);
+                console.log(products);
             } catch (error) {
                 setIsError(true);
             } finally {
@@ -40,20 +42,29 @@ function IndividualProduct() {
         return <div>No products to show.</div>
     }
 
-    if (products.length > 0) {
-        return <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
-            <>
-            <div key={product.id}>
-                <div>id: {product.id}</div>
-                <h3>{product.title}</h3>
-                <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
-            </div>
+    return  <Div>
+                <h1>{products.title}</h1>
+                <img src={products.imageUrl} alt={products.title} />
+                <p>{products.description}</p>
+                <p>Before: {products.price}</p>
+                <p>Now: {products.discountedPrice}</p>
+                <p>Rating: {products.rating}</p>
+                <div>
+                    <h3>Tags:</h3>
+                    {products.tags.map((tag) => (
+                    <p key={tag}>{tag}</p>
+                    ))}
+                </div>
+                {products.reviews.map((review) => (
+                <div key={review.id}>
+                    <p>{review.username} - {review.rating} stars</p>
+                    <p>{review.description}</p>
+                </div>
+                ))}
+                <PrimaryButton>Add to Cart</PrimaryButton>
+            </Div>
 
-            </>
-        ))}</div>
-    }
-
-    return null
+    // return null
 }
 
 export default IndividualProduct;
