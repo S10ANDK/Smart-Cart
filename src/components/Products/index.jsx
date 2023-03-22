@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
-import { useParams } from "react-router-dom";
-
-
+import { useParams, Link } from "react-router-dom";
 
 function ProductsDisplayed() {
     const [products, setProducts] = useState([]);
@@ -42,17 +40,19 @@ function ProductsDisplayed() {
     }
 
     if (products.length > 0) {
-        return <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
-            <>
-            <div key={product.id}>
-                <h3>{product.title}</h3>
-                <div>id: {product.id}</div>
-                <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
-                <p>Price: {product.price}</p>
-            </div>
-
+        return <>
+                <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
+                    <Link key={product.id} to={`/products/${product.id}`}>
+                        <div>
+                            <h2>{product.title}</h2>
+                            <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
+                            <p>Rating: {product.rating}</p>
+                            <p>{product.price}</p>
+                            <p>{product.discountedPrice}</p>
+                        </div>
+                    </Link>
+                ))}</div>
             </>
-        ))}</div>
     }
 
     return null
