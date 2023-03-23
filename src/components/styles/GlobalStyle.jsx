@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2.3rem;
         color: var(--color-black);
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
 
     h2 {

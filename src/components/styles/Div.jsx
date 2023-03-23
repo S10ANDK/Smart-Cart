@@ -4,6 +4,10 @@ const Div = styled.div`
     max-width: 1200px;
     min-height: 100vh;
     margin: auto 10px;
+
+    @media (min-width: 1020px) {
+        margin: auto;
+    }
 `;
 
 export default Div;
