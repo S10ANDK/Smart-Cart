@@ -14,8 +14,9 @@ const StyledSearchForm = styled.form`
         height: 40px;
         margin: auto 50px;
         border: 1px solid #bdbdbd;
-        border-radius: 10px;
+        border-radius: 5px;
         padding: 0px 10px;
+        outline-color: ${(props) => props.theme.color.accentOne};
     }
 `;
 

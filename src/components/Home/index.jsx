@@ -1,3 +1,4 @@
+import React from 'react';
 import Div from "../styles/Div";
 import ProductsDisplayed from "./Products";
 import Search from "./Search";

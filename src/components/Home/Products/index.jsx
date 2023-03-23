@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../constants/urls";
-import { Link } from "react-router-dom";
 import * as S from "./index.styled"
+import ProductCard from "./ProductCard";
 
 function ProductsDisplayed() {
     const [products, setProducts] = useState([]);
@@ -43,14 +43,8 @@ function ProductsDisplayed() {
     if (products.length > 0) {
         return <>
                 <S.productsContainer>{products.map((product) => (
-                    <Link key={product.id} to={`/products/${product.id}`} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '300px', margin: 'auto' }}>
-                        <h2>{product.title}</h2>
-                        <img style={{ width: '250px', height: '250px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
-                        <p>Rating: {product.rating}</p>
-                        <p>{product.price}</p>
-                        <p>{product.discountedPrice}</p>
-                    </Link>
-                ))}
+                    <ProductCard product={product} key={product.id} to={`/products/${product.id}`}/>
+                    ))}
                 </S.productsContainer>
             </>
     }
