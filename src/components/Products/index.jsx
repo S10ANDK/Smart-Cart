@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import * as S from "./index.styled"
 
 function ProductsDisplayed() {
     const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ function ProductsDisplayed() {
                 const response = await fetch(url);
                 const results = await response.json();
                 setProducts(results);
-                console.log(products);
+                // console.log(products);
             } catch (error) {
                 setIsError(true);
             } finally {
@@ -41,17 +42,16 @@ function ProductsDisplayed() {
 
     if (products.length > 0) {
         return <>
-                <div style={{ margin: 'auto', width: '400px' }}>{products.map((product) => (
-                    <Link key={product.id} to={`/products/${product.id}`}>
-                        <div>
-                            <h2>{product.title}</h2>
-                            <img style={{ width: '400px', height: '400px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
-                            <p>Rating: {product.rating}</p>
-                            <p>{product.price}</p>
-                            <p>{product.discountedPrice}</p>
-                        </div>
+                <S.productsContainer>{products.map((product) => (
+                    <Link key={product.id} to={`/products/${product.id}`} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '300px', margin: 'auto' }}>
+                        <h2>{product.title}</h2>
+                        <img style={{ width: '250px', height: '250px', objectFit: 'cover' }} src={product.imageUrl} alt={product.title} />
+                        <p>Rating: {product.rating}</p>
+                        <p>{product.price}</p>
+                        <p>{product.discountedPrice}</p>
                     </Link>
-                ))}</div>
+                ))}
+                </S.productsContainer>
             </>
     }
 

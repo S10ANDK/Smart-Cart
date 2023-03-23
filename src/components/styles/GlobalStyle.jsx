@@ -26,14 +26,15 @@ const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-family: Cabin, sans-serif;
-        font-size: 2.3rem;
+        font-size: 2rem;
         color: var(--color-black);
-        text-align: center;
-        margin-bottom: 80px;
+        text-align: left;
+        margin: 60px auto 80px 20px;
     }
 
     h2 {
         font-family: Montserrat, sans-serif;
+        font-size: 1.2rem;
         text-align: center;
     }
 

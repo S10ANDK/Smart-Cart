@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Div from "../styles/Div";
 import PrimaryButton from "../styles/PrimaryButton";
 
@@ -19,7 +19,7 @@ function IndividualProduct() {
                 const response = await fetch(url);
                 const results = await response.json();
                 setProducts(results);
-                console.log(products);
+                // console.log(products);
             } catch (error) {
                 setIsError(true);
             } finally {

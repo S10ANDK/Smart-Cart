@@ -26,6 +26,10 @@ export const HeaderContentWrapper = styled.div`
     width: 100%;
     max-width: 1000px;
     margin: auto;
+
+    @media (min-width: 1400px) {
+        max-width: 1200px;
+    }
 `;
 
 export const LogoAndNavWrapper = styled.div`
