@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Div from '../styles/Div';
+import Div from '../defaultStyles/Div';
 
 export const ContactDiv = styled(Div)`
     @media(min-width: 620px) {

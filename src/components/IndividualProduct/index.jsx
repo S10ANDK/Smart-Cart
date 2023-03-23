@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
-import Div from "../styles/Div";
+import Div from "../defaultStyles/Div";
 import PrimaryButton from "../styles/PrimaryButton";
 
 function IndividualProduct() {

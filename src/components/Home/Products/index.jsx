@@ -43,7 +43,7 @@ function ProductsDisplayed() {
     if (products.length > 0) {
         return <>
                 <S.productsContainer>{products.map((product) => (
-                    <ProductCard product={product} key={product.id} to={`/products/${product.id}`}/>
+                    <ProductCard product={product}/>
                     ))}
                 </S.productsContainer>
             </>
