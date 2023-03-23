@@ -18,7 +18,7 @@ export const Form = styled.form`
         margin: 10px 0px;
         border: 1px solid #bdbdbd;
         border-radius: 5px;
-        padding-left: 8px;
+        padding: 0px 10px;
         outline-color: ${(props) => props.theme.color.accentOne};
     }
 
@@ -27,7 +27,7 @@ export const Form = styled.form`
     }
 
     textarea {
-        padding: 8px;
+        padding: 10px;
     }
 `; 
 

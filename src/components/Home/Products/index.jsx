@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_URL } from "../../constants/urls";
+import { API_URL } from "../../../constants/urls";
 import { Link } from "react-router-dom";
 import * as S from "./index.styled"
 
