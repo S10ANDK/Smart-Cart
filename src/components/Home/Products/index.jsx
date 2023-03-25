@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../constants/urls";
 import * as S from "./index.styled"
 import ProductCard from "./ProductCard";
+import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
+import StyledSearchForm from "../Search/index.styled";
+
+const Search = () => {
+    const [search, setSearch] = useState("");
+
+    return <StyledSearchForm>
+            <input type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search"></input>
+        </StyledSearchForm>
+}
 
 function ProductsDisplayed() {
     const [products, setProducts] = useState([]);
@@ -29,7 +39,7 @@ function ProductsDisplayed() {
     }, [])
 
     if (isLoading) {
-        return <div>Loading...</div>
+        return <LoadingIndicator />
     }
 
     if (isError) {
@@ -42,8 +52,9 @@ function ProductsDisplayed() {
 
     if (products.length > 0) {
         return <>
+                <Search />
                 <S.productsContainer>{products.map((product) => (
-                    <ProductCard product={product}/>
+                    <ProductCard key={product.id} product={product}/>
                     ))}
                 </S.productsContainer>
             </>

@@ -8,7 +8,7 @@ function Home() {
       <>
         <Div>
           <h1>Products</h1>
-          <Search />
+          {/* <Search /> */}
           <ProductsDisplayed />
         </Div>
       </>

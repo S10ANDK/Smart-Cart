@@ -1,14 +1,33 @@
 import React from "react";
 import * as S from "./index.styled"
+import BaseButton from "../../../defaultStyles/BaseButton";
 
 const ProductCard = ({product}) => {
     return (
-        <S.ProductCardContainer key={product.id} to={`/products/${product.id}`}>
-                        <h2>{product.title}</h2>
-                        <S.ProductImageSmall src={product.imageUrl} alt={product.title} />
-                        <p>Rating: {product.rating}</p>
-                        <p>{product.price}</p>
-                        <p>{product.discountedPrice}</p>
+        <S.ProductCardContainer to={`/products/${product.id}`}>
+            <S.PercentageOffContainer>
+                {product.price !== product.discountedPrice && (
+                    <S.PercentageOff>
+                    {product.price !== product.discountedPrice && Math.trunc(((product.price - product.discountedPrice) / product.discountedPrice) * 100)}
+                    {product.price !== product.discountedPrice && "%"}
+                    </S.PercentageOff>
+                ) }
+            </S.PercentageOffContainer>
+
+            <h2>{product.title}</h2>
+            <S.ProductImageSmall src={product.imageUrl} alt={product.title} />
+            <S.RatingContainer>
+                <p>Rating: <span>{product.rating}/5</span></p>
+            </S.RatingContainer>
+            <S.ProductCardInfoContainer>
+                <p>{product.discountedPrice} NOK</p>
+                {product.price !== product.discountedPrice && (
+                    <S.OldPrice>{product.price} NOK</S.OldPrice>
+                ) }
+            </S.ProductCardInfoContainer>
+            <S.ButtonContainer>
+                <BaseButton>Show</BaseButton>
+            </S.ButtonContainer>
         </S.ProductCardContainer>
     )
 }

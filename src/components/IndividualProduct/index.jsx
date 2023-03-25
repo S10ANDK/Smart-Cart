@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
 import Div from "../defaultStyles/Div";
-import PrimaryButton from "../styles/PrimaryButton";
+import PrimaryButton from "../defaultStyles/PrimaryButton";
+import LoadingIndicator from "../defaultStyles/LoadingIndicator";
 
 function IndividualProduct() {
     const [products, setProducts] = useState([]);
@@ -31,7 +32,7 @@ function IndividualProduct() {
     }, [id])
 
     if (isLoading) {
-        return <div>Loading...</div>
+        return <LoadingIndicator />
     }
 
     if (isError) {
