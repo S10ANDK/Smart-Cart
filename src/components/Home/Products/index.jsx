@@ -1,42 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../constants/urls";
-import * as S from "./index.styled"
+import * as S from "./index.styled";
 import ProductCard from "./ProductCard";
 import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
-import StyledSearchForm from "../Search/index.styled";
+import Search from "../Search";
+// import StyledSearchForm from "../Search/index.styled";
 
-const Search = () => {
-    const [search, setSearch] = useState("");
+// const Search = ({ onSearch }) => {
+//   const handleSearch = (e) => {
+//     onSearch(e.target.value);
+//   };
 
-    return <StyledSearchForm>
-            <input type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search"></input>
-        </StyledSearchForm>
-}
+//   return (
+//     <StyledSearchForm>
+//       <input
+//         type="search"
+//         onChange={handleSearch}
+//         placeholder="Search"
+//       ></input>
+//     </StyledSearchForm>
+//   );
+// };
 
 function ProductsDisplayed() {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
+    async function getProducts(url, search = "") {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`${url}?search=${search}`);
+        const results = await response.json();
+        setProducts(results);
+        setFilteredProducts(results);
+      } catch (error) {
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-        async function getProducts(url) {
-            try {
-                setIsLoading(true);
-                const response = await fetch(url);
-                const results = await response.json();
-                setProducts(results);
-                // console.log(products);
-            } catch (error) {
-                setIsError(true);
-            } finally {
-                setIsLoading(false);
-            }
-        }
+    getProducts(API_URL);
+  }, []);
 
-        getProducts(API_URL);
-    }, [])
+  const handleSearch = (searchTerm) => {
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredProducts(filtered);
+  };
 
     if (isLoading) {
         return <LoadingIndicator />
@@ -50,17 +66,16 @@ function ProductsDisplayed() {
         return <div>No products to show.</div>
     }
 
-    if (products.length > 0) {
-        return <>
-                <Search />
-                <S.productsContainer>{products.map((product) => (
-                    <ProductCard key={product.id} product={product}/>
+    return (
+            <>
+                <Search onSearch={handleSearch} />
+                <S.productsContainer>
+                    {filteredProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
                     ))}
                 </S.productsContainer>
             </>
-    }
-
-    return null
+        );
 }
-
+        
 export default ProductsDisplayed;
