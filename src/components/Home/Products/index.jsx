@@ -3,24 +3,7 @@ import { API_URL } from "../../../constants/urls";
 import * as S from "./index.styled";
 import ProductCard from "./ProductCard";
 import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
-import Search from "../Search";
-// import StyledSearchForm from "../Search/index.styled";
-
-// const Search = ({ onSearch }) => {
-//   const handleSearch = (e) => {
-//     onSearch(e.target.value);
-//   };
-
-//   return (
-//     <StyledSearchForm>
-//       <input
-//         type="search"
-//         onChange={handleSearch}
-//         placeholder="Search"
-//       ></input>
-//     </StyledSearchForm>
-//   );
-// };
+import Search from "./Search";
 
 function ProductsDisplayed() {
   const [products, setProducts] = useState([]);
