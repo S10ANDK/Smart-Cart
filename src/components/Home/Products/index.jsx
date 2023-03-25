@@ -3,12 +3,43 @@ import { API_URL } from "../../../constants/urls";
 import * as S from "./index.styled";
 import ProductCard from "./ProductCard";
 import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
-import Search from "./Search";
+import _debounce from 'lodash/debounce';
+import StyledSearchForm from "./Search/index.styled";
+
+const Search = ({ onSearch, minLength }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const debouncedSearch = _debounce((searchTerm) => {
+    onSearch(searchTerm);
+  }, 300);
+
+  const handleChange = (event) => {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+    if (newSearchTerm.length >= minLength) {
+      debouncedSearch(newSearchTerm);
+    } else if (newSearchTerm.length === 0) {
+        debouncedSearch(newSearchTerm);
+    }
+  };
+
+  return (
+    <div>
+      <StyledSearchForm>
+        <input
+          type="search"
+          value={searchTerm}
+          onChange={handleChange}
+          placeholder="Search"
+        />
+      </StyledSearchForm>
+    </div>
+  );
+};
 
 function ProductsDisplayed() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -49,16 +80,16 @@ function ProductsDisplayed() {
         return <div>No products to show.</div>
     }
 
-    return (
-            <>
-                <Search onSearch={handleSearch} />
-                <S.productsContainer>
-                    {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                    ))}
-                </S.productsContainer>
-            </>
-        );
+  return (
+    <>
+      <Search onSearch={handleSearch} minLength={3} />
+        <S.productsContainer>
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </S.productsContainer>
+    </>
+  );
 }
-        
+
 export default ProductsDisplayed;
