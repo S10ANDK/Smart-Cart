@@ -16,11 +16,9 @@ const Search = ({ onSearch, minLength }) => {
   const handleChange = (event) => {
     const newSearchTerm = event.target.value;
     setSearchTerm(newSearchTerm);
-    if (newSearchTerm.length >= minLength) {
-      debouncedSearch(newSearchTerm);
-    } else if (newSearchTerm.length === 0) {
+    if (newSearchTerm.length >= minLength || newSearchTerm.length === 0) {
         debouncedSearch(newSearchTerm);
-    }
+      }
   };
 
   return (
