@@ -54,6 +54,10 @@ export const RatingContainer = styled.div`
   text-align: left;
   margin-top: 20px;
   padding-left: 5px;
+
+  p {
+    font-style: italic;
+  }
 `;
 
 export const ProductCardInfoContainer = styled.div`
