@@ -1,10 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farEmptyStar } from '@fortawesome/free-regular-svg-icons';
 
 const GetStarRating = (rating) => {
   if (rating === 0) {
-    return [];
+    return <p>No yet rated</p>;
   }
 
   const fullStars = Math.floor(rating);
@@ -22,7 +23,7 @@ const GetStarRating = (rating) => {
   }
 
   for (let i = 0; i < emptyStars; i++) {
-    stars.push(<FontAwesomeIcon icon={faStar} key={`empty-${i}`} />);
+    stars.push(<FontAwesomeIcon icon={farEmptyStar} key={`empty-${i}`} />);
   }
 
   return stars;
