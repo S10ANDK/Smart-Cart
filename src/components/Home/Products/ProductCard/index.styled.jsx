@@ -46,6 +46,7 @@ export const ProductImageSmall = styled.img`
 
 export const RatingContainer = styled.div`
     width: 250px;
+    height: 20px;
     text-align: left;
     margin-top: 20px;
     padding-left: 5px;
