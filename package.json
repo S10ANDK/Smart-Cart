@@ -57,13 +57,15 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.html": [
       "prettier --write"
     ],
     "*.jsx": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ]
   }
 }
