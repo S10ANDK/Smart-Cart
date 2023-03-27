@@ -50,13 +50,6 @@ export const RatingContainer = styled.div`
     text-align: left;
     margin-top: 20px;
     padding-left: 5px;
-
-    span {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: ${(props) => props.theme.color.accentTwo};
-        margin-left: 10px;
-    }
 `;
 
 export const ProductCardInfoContainer = styled.div`
