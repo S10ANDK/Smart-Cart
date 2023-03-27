@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const BaseButton = styled.button`
   background: ${(props) => props.theme.color.secondary};
@@ -17,10 +17,6 @@ const BaseButton = styled.button`
   :hover {
     background: ${(props) => props.theme.color.accentTwo};
   }
-
-  /* @media (min-width: 940px) {
-        width: 100px;
-    }; */
 `;
 
 export default BaseButton;

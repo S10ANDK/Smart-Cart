@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { API_URL } from "../../../constants/urls";
-import * as S from "./index.styled";
-import ProductCard from "./ProductCard";
-import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
-import _debounce from "lodash/debounce";
-import StyledSearchForm from "./Search/index.styled";
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../../constants/urls';
+import * as S from './index.styled';
+import ProductCard from './ProductCard';
+import LoadingIndicator from '../../defaultStyles/LoadingIndicator';
+import _debounce from 'lodash/debounce';
+import StyledSearchForm from './Search/index.styled';
 
 const Search = ({ onSearch, minLength }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   const debouncedSearch = _debounce((searchTerm) => {
     onSearch(searchTerm);
@@ -42,7 +42,7 @@ function ProductsDisplayed() {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    async function getProducts(url, search = "") {
+    async function getProducts(url, search = '') {
       try {
         setIsLoading(true);
         const response = await fetch(`${url}?search=${search}`);

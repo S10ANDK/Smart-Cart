@@ -1,4 +1,5 @@
-import StyledSearchForm from "./index.styled";
+import React from 'react';
+import StyledSearchForm from './index.styled';
 
 const Search = ({ onSearch }) => {
   const handleSearch = (e) => {

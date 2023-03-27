@@ -1,7 +1,10 @@
-import React from "react";
-import * as S from "./index.styled";
-import BaseButton from "../../../defaultStyles/BaseButton";
-import GetStarRating from "../../../Stars";
+import React from 'react';
+import * as S from './index.styled';
+import BaseButton from '../../../defaultStyles/BaseButton';
+import GetStarRating from '../../../Stars';
+
+// console.log
+//     ( "Intentional Error" );;;
 
 const ProductCard = ({ product }) => {
   return (
@@ -15,7 +18,7 @@ const ProductCard = ({ product }) => {
                   product.discountedPrice) *
                   100
               )}
-            {product.price !== product.discountedPrice && "%"}
+            {product.price !== product.discountedPrice && '%'}
           </S.PercentageOff>
         )}
       </S.PercentageOffContainer>

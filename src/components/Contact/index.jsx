@@ -1,8 +1,8 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import * as S from "./index.styled";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import * as S from './index.styled';
 
 const schema = yup
   .object({
@@ -35,17 +35,17 @@ function Contact() {
           form.
         </p>
         <S.Form onSubmit={handleSubmit(onSubmit)}>
-          <input placeholder="name" {...register("name")} />
+          <input placeholder="name" {...register('name')} />
           <S.FormErrorMessage>{errors.name?.message}</S.FormErrorMessage>
-          <input placeholder="email" {...register("email")} />
+          <input placeholder="email" {...register('email')} />
           <S.FormErrorMessage>{errors.email?.message}</S.FormErrorMessage>
-          <input placeholder="subject" {...register("subject")} />
+          <input placeholder="subject" {...register('subject')} />
           <S.FormErrorMessage>{errors.subject?.message}</S.FormErrorMessage>
           <textarea
             placeholder="message"
             rows={10}
             cols={30}
-            {...register("message")}
+            {...register('message')}
           />
           <S.FormErrorMessage>{errors.message?.message}</S.FormErrorMessage>
           <S.SubmitFormButton type="submit" value="Submit" />

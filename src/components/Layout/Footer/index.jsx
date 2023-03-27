@@ -1,4 +1,5 @@
-import StyledFooter from "./index.styled";
+import React from 'react';
+import StyledFooter from './index.styled';
 
 function Footer() {
   return (

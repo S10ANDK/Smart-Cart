@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { API_URL } from "../../constants/urls";
-import { useParams } from "react-router-dom";
-import Div from "../defaultStyles/Div";
-import PrimaryButton from "../defaultStyles/PrimaryButton";
-import LoadingIndicator from "../defaultStyles/LoadingIndicator";
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../constants/urls';
+import { useParams } from 'react-router-dom';
+import Div from '../defaultStyles/Div';
+import PrimaryButton from '../defaultStyles/PrimaryButton';
+import LoadingIndicator from '../defaultStyles/LoadingIndicator';
 
 function IndividualProduct() {
   const [products, setProducts] = useState([]);

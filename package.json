@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier -w src/**/*.jsx && -w src/**/*.js",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src/**/*.jsx && src/**/*.js",
     "prepare": "husky install"
   },
   "eslintConfig": {

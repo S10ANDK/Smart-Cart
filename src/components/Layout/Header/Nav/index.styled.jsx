@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HamburgerIcon = styled.div`
   display: flex;
@@ -20,17 +20,17 @@ export const HamburgerIcon = styled.div`
     transition: all 0.2s linear;
 
     &:nth-child(1) {
-      transform: ${({ active }) => (active ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${({ active }) => (active ? 'rotate(45deg)' : 'rotate(0)')};
     }
 
     &:nth-child(2) {
       transform: ${({ active }) =>
-        active ? "translateX(-100%)" : "translateX(0)"};
+        active ? 'translateX(-100%)' : 'translateX(0)'};
       opacity: ${({ active }) => (active ? 0 : 1)};
     }
 
     &:nth-child(3) {
-      transform: ${({ active }) => (active ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${({ active }) => (active ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 
@@ -50,7 +50,7 @@ export const NavBox = styled.nav`
   margin-top: 75px;
   padding: 25px 0px;
   transform: ${({ active }) =>
-    active ? "translateX(0)" : "translateX(-102%)"};
+    active ? 'translateX(0)' : 'translateX(-102%)'};
   transition: 0.2s ease-in-out;
   border-radius: 0px 15px 15px 0px;
   box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
@@ -60,7 +60,7 @@ export const NavBox = styled.nav`
     box-shadow: none;
     padding: 0;
     transition: none;
-    transform: ${({ active }) => (active ? "translateX(0)" : "translateX(0)")};
+    transform: ${({ active }) => (active ? 'translateX(0)' : 'translateX(0)')};
     background-color: ${(props) => props.theme.color.primary};
     margin-top: 0;
     position: relative;
