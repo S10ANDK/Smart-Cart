@@ -25,8 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier -w src/**/*.jsx && -w src/**/*.js",
-    "lint": "eslint src/**/*.jsx && src/**/*.js",
+    "format": "prettier -w src/**/*.jsx && prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.jsx && eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.jsx --cache --fix && eslint src/**/*.js --cache --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {

@@ -11,6 +11,9 @@
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        },
         "sourceType": "module"
     },
     "plugins": [
@@ -18,5 +21,11 @@
     ],
     "rules": {
         "react/prop-types": "off"
-    }
+    },
+
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }   
 }
