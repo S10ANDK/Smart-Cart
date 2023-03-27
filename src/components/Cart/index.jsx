@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 const useCartStore = create((set) => ({
   products: [],
@@ -30,7 +30,7 @@ function useCart() {
   const clearCart = useCartStore((state) => state.clearCart);
 
   function addToCart(id) {
-    console.log('Add to cart', id);
+    console.log("Add to cart", id);
     addProductToCart(id);
   }
 

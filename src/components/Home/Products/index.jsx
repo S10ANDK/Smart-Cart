@@ -3,11 +3,11 @@ import { API_URL } from "../../../constants/urls";
 import * as S from "./index.styled";
 import ProductCard from "./ProductCard";
 import LoadingIndicator from "../../defaultStyles/LoadingIndicator";
-import _debounce from 'lodash/debounce';
+import _debounce from "lodash/debounce";
 import StyledSearchForm from "./Search/index.styled";
 
 const Search = ({ onSearch, minLength }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const debouncedSearch = _debounce((searchTerm) => {
     onSearch(searchTerm);
@@ -17,8 +17,8 @@ const Search = ({ onSearch, minLength }) => {
     const newSearchTerm = event.target.value;
     setSearchTerm(newSearchTerm);
     if (newSearchTerm.length >= minLength || newSearchTerm.length === 0) {
-        debouncedSearch(newSearchTerm);
-      }
+      debouncedSearch(newSearchTerm);
+    }
   };
 
   return (
@@ -66,26 +66,26 @@ function ProductsDisplayed() {
     setFilteredProducts(filtered);
   };
 
-    if (isLoading) {
-        return <LoadingIndicator />
-    }
+  if (isLoading) {
+    return <LoadingIndicator />;
+  }
 
-    if (isError) {
-        return <div>There was an error.</div>
-    }
+  if (isError) {
+    return <div>There was an error.</div>;
+  }
 
-    if (products.length <= 0) {
-        return <div>No products to show.</div>
-    }
+  if (products.length <= 0) {
+    return <div>No products to show.</div>;
+  }
 
   return (
     <>
       <Search onSearch={handleSearch} minLength={3} />
-        <S.productsContainer>
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </S.productsContainer>
+      <S.productsContainer>
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </S.productsContainer>
     </>
   );
 }
