@@ -3,14 +3,26 @@ import Div from '../defaultStyles/Div';
 import PrimaryButton from '../defaultStyles/PrimaryButton';
 import * as S from '../Home/Products/ProductCard/index.styled';
 
+export const Heading = styled.h2`
+  margin-top: 50px;
+  text-align: left;
+`;
+
 export const IndividualProductContainer = styled(Div)`
-  display: grid;
-  grid-template-rows: 0.3fr 0.6fr 0.5fr;
-  grid-template-columns: 1fr;
   max-width: 600px;
   margin: auto;
 
   @media (min-width: 1000px) {
+    max-width: 1000px;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-rows: 0.2fr 0.5fr;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+    column-gap: 60px;
     grid-template-rows: 0.5fr 0.3fr;
     grid-template-columns: 1fr 1fr;
   }
@@ -31,23 +43,23 @@ export const TagContainer = styled.div`
 export const ProductImageContainer = styled.div`
   margin: auto;
   text-align: center;
-
-  /* @media (mind-width: 1000px) {
-    text-align: left;
-  } */
 `;
 
 export const ProductImage = styled.img`
   margin: auto;
   width: 85vw;
   max-width: 600px;
+  max-height: 600px;
   object-fit: cover;
 
   @media (min-width: 1000px) {
-    grid-row-start: 2;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 650px;
+    max-height: 650px;
   }
 `;
 
@@ -55,10 +67,7 @@ export const ProductInformationContainer = styled.div`
   margin: 20px 10px 0px;
 
   @media (min-width: 1000px) {
-    grid-row-start: 2;
-    grid-row-end: 1;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    margin-top: 30px;
   }
 `;
 
@@ -67,7 +76,6 @@ export const PercentageAndOverAllRatingContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  max-width: 600px;
 `;
 
 export const OverallRatingContainer = styled.div`
@@ -98,7 +106,6 @@ export const PriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 600px;
   margin: auto;
 `;
 
@@ -114,14 +121,17 @@ export const ProductOldPrice = styled(S.OldPrice)`
   margin: auto 0px;
 `;
 
-export const Heading = styled.h2`
-  margin-top: 50px;
-  text-align: left;
+export const DescriptionBody = styled.p`
+  margin-left: 0;
 `;
 
 export const AddToCartContainer = styled.div`
   margin-top: 20px;
   text-align: center;
+
+  @media (min-width: 1000px) {
+    text-align: left;
+  }
 `;
 
 export const AddToCartButton = styled(PrimaryButton)`
@@ -136,19 +146,15 @@ export const AddToCartButton = styled(PrimaryButton)`
   @media (min-width: 655px) {
     width: 600px;
   }
+
+  @media (min-width: 1000px) {
+    width: 200px;
+  }
 `;
 
 export const ProductReviewsContainer = styled.div`
   margin: auto;
   width: 100%;
-  max-width: 600px;
-
-  /* @media (min-width: 1000px) {
-    grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 2;
-  } */
 `;
 
 export const ReviewContainer = styled.div`
@@ -177,4 +183,6 @@ export const ReviewRating = styled.p`
   }
 `;
 
-export const ReviewBody = styled.p``;
+export const ReviewBody = styled.p`
+  margin-left: 0;
+`;

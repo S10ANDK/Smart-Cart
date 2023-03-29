@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../constants/urls';
 import { useParams } from 'react-router-dom';
 import Div from '../defaultStyles/Div';
-// import PrimaryButton from '../defaultStyles/PrimaryButton';
 import LoadingIndicator from '../defaultStyles/LoadingIndicator';
 import * as S from './index.styled';
 import GetStarRating from '../Stars';
@@ -21,7 +20,6 @@ function GetIndividualProduct() {
         const response = await fetch(url);
         const results = await response.json();
         setProduct(results);
-        // console.log(products);
       } catch (error) {
         setIsError(true);
       } finally {
@@ -50,7 +48,6 @@ function GetIndividualProduct() {
       <S.IndividualProductContainer>
         <S.TagsAndImageContainer>
           <S.TagContainer>
-            {/* <S.Heading>Tags:</S.Heading> */}
             {product.tags.map((tag) => (
               <p key={tag}>#{tag}</p>
             ))}
@@ -90,13 +87,13 @@ function GetIndividualProduct() {
             )}
           </S.PriceContainer>
           <S.Heading>Description</S.Heading>
-          <p>{product.description}</p>
+          <S.DescriptionBody>{product.description}</S.DescriptionBody>
           <S.AddToCartContainer>
             <S.AddToCartButton>Add to Cart</S.AddToCartButton>
           </S.AddToCartContainer>
         </S.ProductInformationContainer>
         <S.ProductReviewsContainer>
-          <S.Heading>User Reviews</S.Heading>
+          {product.reviews.length > 0 && <S.Heading>User Reviews</S.Heading>}
           {product.reviews.map((review) => (
             <S.ReviewContainer key={review.id}>
               <S.ReviewerNameAndRatingContainer>
@@ -113,8 +110,6 @@ function GetIndividualProduct() {
       </S.IndividualProductContainer>
     </>
   );
-
-  // return null
 }
 
 function IndividualProduct() {
