@@ -48,8 +48,12 @@ export const ProductReviewsContainer = styled.div`
 `;
 
 export const ProductOldPrice = styled(S.OldPrice)`
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
   font-size: 0.9rem;
-  margin: auto;
+  margin: auto 10px;
 
   span {
     font-size: 1rem;
@@ -59,15 +63,18 @@ export const ProductOldPrice = styled(S.OldPrice)`
 export const PriceContainer = styled.div`
   padding-bottom: 20px;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
   align-items: center;
   max-width: 600px;
   margin: auto;
 `;
 
 export const ProductPrice = styled.p`
+  grid-row: 2;
+  font-family: Cabin, sans-serif;
   font-size: 1.3rem;
+  font-weight: bold;
   margin: 10px 10px;
 `;
 
@@ -75,6 +82,7 @@ export const ProductPercentageOffContainer = styled(S.PercentageOffContainer)`
   position: relative;
   max-width: 160px;
   transform: translateY(0px) translateX(0);
+  grid-row: 2;
 `;
 
 export const ProductPercentageOff = styled(S.PercentageOff)`

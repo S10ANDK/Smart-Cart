@@ -49,12 +49,12 @@ function GetIndividualProduct() {
       <S.IndividualProductContainer>
         <S.ProductImage src={product.imageUrl} alt={product.title} />
         <S.ProductInformationContainer>
-          {product.price !== product.discountedPrice && (
-            <S.ProductOldPrice>
-              Before: <span>{product.price}</span> NOK
-            </S.ProductOldPrice>
-          )}
           <S.PriceContainer>
+            {product.price !== product.discountedPrice && (
+              <S.ProductOldPrice>
+                Before: <span>{product.price}</span> NOK
+              </S.ProductOldPrice>
+            )}
             <S.ProductPrice>{product.discountedPrice} NOK</S.ProductPrice>
             <S.ProductPercentageOffContainer>
               {product.price !== product.discountedPrice && (
