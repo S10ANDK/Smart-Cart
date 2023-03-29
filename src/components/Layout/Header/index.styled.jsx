@@ -24,11 +24,10 @@ export const HeaderContentWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  max-width: 1000px;
   margin: auto;
 
   @media (min-width: 1400px) {
-    max-width: 1200px;
+    max-width: none;
   }
 `;
 
@@ -49,7 +48,7 @@ export const Logo = styled.img`
   cursor: pointer;
 
   @media (min-width: 1000px) {
-    margin: 10px 0px;
+    margin: 10px 0px 10px 30px;
   }
 `;
 
@@ -70,6 +69,10 @@ export const NavWrapper = styled.div`
 export const CartWrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media (min-width: 1000px) {
+    margin-right: 30px;
+  }
 `;
 
 export const CartIcon = styled.img`
