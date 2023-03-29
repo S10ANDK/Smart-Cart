@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../constants/urls';
 import { useParams } from 'react-router-dom';
 import Div from '../defaultStyles/Div';
-import PrimaryButton from '../defaultStyles/PrimaryButton';
+// import PrimaryButton from '../defaultStyles/PrimaryButton';
 import LoadingIndicator from '../defaultStyles/LoadingIndicator';
 import * as S from './index.styled';
+import GetStarRating from '../Stars';
 
 function GetIndividualProduct() {
   const [product, setProduct] = useState([]);
@@ -47,15 +48,25 @@ function GetIndividualProduct() {
     <>
       <h1>{product.title}</h1>
       <S.IndividualProductContainer>
-        <S.ProductImage src={product.imageUrl} alt={product.title} />
+        <S.TagsAndImageContainer>
+          <S.TagContainer>
+            {/* <S.Heading>Tags:</S.Heading> */}
+            {product.tags.map((tag) => (
+              <p key={tag}>#{tag}</p>
+            ))}
+          </S.TagContainer>
+          <S.ProductImageContainer>
+            <S.ProductImage src={product.imageUrl} alt={product.title} />
+          </S.ProductImageContainer>
+        </S.TagsAndImageContainer>
         <S.ProductInformationContainer>
-          <S.PriceContainer>
-            {product.price !== product.discountedPrice && (
-              <S.ProductOldPrice>
-                Before: <span>{product.price}</span> NOK
-              </S.ProductOldPrice>
-            )}
-            <S.ProductPrice>{product.discountedPrice} NOK</S.ProductPrice>
+          <S.PercentageAndOverAllRatingContainer>
+            <S.OverallRatingContainer>
+              <p>
+                {GetStarRating(product.rating)}
+                {product.rating > 0 && <span>({product.rating}/5)</span>}
+              </p>
+            </S.OverallRatingContainer>
             <S.ProductPercentageOffContainer>
               {product.price !== product.discountedPrice && (
                 <S.ProductPercentageOff>
@@ -69,33 +80,34 @@ function GetIndividualProduct() {
                 </S.ProductPercentageOff>
               )}
             </S.ProductPercentageOffContainer>
+          </S.PercentageAndOverAllRatingContainer>
+          <S.PriceContainer>
+            <S.ProductPrice>{product.discountedPrice} NOK</S.ProductPrice>
+            {product.price !== product.discountedPrice && (
+              <S.ProductOldPrice>
+                Before: <span>{product.price} NOK</span>
+              </S.ProductOldPrice>
+            )}
           </S.PriceContainer>
-          <p>Rating: {product.rating}</p>
+          <S.Heading>Description</S.Heading>
           <p>{product.description}</p>
-          <div>
-            <h3>Tags:</h3>
-            {product.tags.map((tag) => (
-              <p key={tag}>{tag}</p>
-            ))}
-          </div>
-          {product.reviews.map((review) => (
-            <div key={review.id}>
-              <p>
-                {review.username} - {review.rating} stars
-              </p>
-              <p>{review.description}</p>
-            </div>
-          ))}
-          <PrimaryButton>Add to Cart</PrimaryButton>
+          <S.AddToCartContainer>
+            <S.AddToCartButton>Add to Cart</S.AddToCartButton>
+          </S.AddToCartContainer>
         </S.ProductInformationContainer>
         <S.ProductReviewsContainer>
+          <S.Heading>User Reviews</S.Heading>
           {product.reviews.map((review) => (
-            <div key={review.id}>
-              <p>
-                {review.username} - {review.rating} stars
-              </p>
-              <p>{review.description}</p>
-            </div>
+            <S.ReviewContainer key={review.id}>
+              <S.ReviewerNameAndRatingContainer>
+                <S.ReviewerName>{review.username}</S.ReviewerName>
+                <S.ReviewRating>
+                  {GetStarRating(review.rating)}
+                  {product.rating > 0 && <span>({review.rating}/5)</span>}
+                </S.ReviewRating>
+              </S.ReviewerNameAndRatingContainer>
+              <S.ReviewBody>{review.description}</S.ReviewBody>
+            </S.ReviewContainer>
           ))}
         </S.ProductReviewsContainer>
       </S.IndividualProductContainer>

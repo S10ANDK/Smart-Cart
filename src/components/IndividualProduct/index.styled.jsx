@@ -1,22 +1,46 @@
 import styled from 'styled-components';
 import Div from '../defaultStyles/Div';
+import PrimaryButton from '../defaultStyles/PrimaryButton';
 import * as S from '../Home/Products/ProductCard/index.styled';
 
 export const IndividualProductContainer = styled(Div)`
   display: grid;
   grid-template-rows: 0.3fr 0.6fr 0.5fr;
   grid-template-columns: 1fr;
+  max-width: 600px;
+  margin: auto;
 
   @media (min-width: 1000px) {
     grid-template-rows: 0.5fr 0.3fr;
     grid-template-columns: 1fr 1fr;
-    /* max-height: 500px; */
   }
+`;
+
+export const TagsAndImageContainer = styled.div`
+  display: block;
+`;
+
+export const TagContainer = styled.div`
+  margin: 0px 10px 10px;
+  p {
+    display: inline;
+    margin-right: 10px;
+  }
+`;
+
+export const ProductImageContainer = styled.div`
+  margin: auto;
+  text-align: center;
+
+  /* @media (mind-width: 1000px) {
+    text-align: left;
+  } */
 `;
 
 export const ProductImage = styled.img`
   margin: auto;
-  max-width: 87vw;
+  width: 85vw;
+  max-width: 600px;
   object-fit: cover;
 
   @media (min-width: 1000px) {
@@ -28,7 +52,7 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductInformationContainer = styled.div`
-  margin-top: 20px;
+  margin: 20px 10px 0px;
 
   @media (min-width: 1000px) {
     grid-row-start: 2;
@@ -38,51 +62,29 @@ export const ProductInformationContainer = styled.div`
   }
 `;
 
-export const ProductReviewsContainer = styled.div`
-  @media (min-width: 1000px) {
-    grid-row-start: 2;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 2;
-  }
-`;
-
-export const ProductOldPrice = styled(S.OldPrice)`
-  grid-row-start: 1;
-  grid-row-end: 1;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  font-size: 0.9rem;
-  margin: auto 10px;
-
-  span {
-    font-size: 1rem;
-  }
-`;
-
-export const PriceContainer = styled.div`
-  padding-bottom: 20px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 0.8fr 1fr;
+export const PercentageAndOverAllRatingContainer = styled.div`
+  display: flex;
   align-items: center;
-  max-width: 600px;
+  justify-content: space-between;
   margin: auto;
+  max-width: 600px;
 `;
 
-export const ProductPrice = styled.p`
-  grid-row: 2;
-  font-family: Cabin, sans-serif;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 10px 10px;
+export const OverallRatingContainer = styled.div`
+  display: inline;
+  text-align: right;
+
+  p span {
+    margin-left: 8px;
+  }
 `;
 
 export const ProductPercentageOffContainer = styled(S.PercentageOffContainer)`
   position: relative;
-  max-width: 160px;
+  max-width: 150px;
   transform: translateY(0px) translateX(0);
-  grid-row: 2;
+  grid-row: 1;
+  text-align: right;
 `;
 
 export const ProductPercentageOff = styled(S.PercentageOff)`
@@ -90,3 +92,89 @@ export const ProductPercentageOff = styled(S.PercentageOff)`
   border-radius: 2px;
   padding: 5px;
 `;
+
+export const PriceContainer = styled.div`
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+`;
+
+export const ProductPrice = styled.p`
+  font-family: Cabin, sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 10px 0px;
+`;
+
+export const ProductOldPrice = styled(S.OldPrice)`
+  font-size: 1rem;
+  margin: auto 0px;
+`;
+
+export const Heading = styled.h2`
+  margin-top: 50px;
+  text-align: left;
+`;
+
+export const AddToCartContainer = styled.div`
+  margin-top: 20px;
+  text-align: center;
+`;
+
+export const AddToCartButton = styled(PrimaryButton)`
+  width: 300px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+
+  @media (min-width: 450px) {
+    width: 400px;
+  }
+
+  @media (min-width: 655px) {
+    width: 600px;
+  }
+`;
+
+export const ProductReviewsContainer = styled.div`
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+
+  /* @media (min-width: 1000px) {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+  } */
+`;
+
+export const ReviewContainer = styled.div`
+  margin: 40px 0px;
+  padding: 20px 0px;
+  border-bottom: 2px solid ${(props) => props.theme.color.accentTwo};
+`;
+
+export const ReviewerNameAndRatingContainer = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+`;
+
+export const ReviewerName = styled.p`
+  color: ${(props) => props.theme.color.accentTwo};
+  font-weight: 500;
+  text-align: left;
+  margin-left: 0;
+`;
+
+export const ReviewRating = styled.p`
+  margin-right: 0;
+
+  span {
+    padding-left: 10px;
+  }
+`;
+
+export const ReviewBody = styled.p``;
