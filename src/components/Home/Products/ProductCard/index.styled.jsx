@@ -39,7 +39,7 @@ export const PercentageOff = styled.p`
   background: red;
   color: ${(props) => props.theme.color.white};
   padding: 10px;
-  border-radius: 100px;
+  border-radius: 5px;
 `;
 
 export const ProductImageSmall = styled.img`
