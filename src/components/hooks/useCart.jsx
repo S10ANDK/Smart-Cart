@@ -5,7 +5,8 @@ const useCartStore = create((set) => ({
   cart: [],
   isLoading: false,
   hasErrors: false,
-  addProductToCart: (id) => set((state) => ({ cart: [...state.cart, id] })),
+  addProductToCart: (product) =>
+    set((state) => ({ cart: [...state.cart, product] })),
   clearCart: () => set({ cart: [] }),
   fetchProducts: async (url) => {
     set(() => ({ isLoading: true }));

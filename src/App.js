@@ -3,16 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import IndividualProduct from './components/IndividualProduct';
-import Div from './components/defaultStyles/Div';
+import Cart from './components/Cart';
 import Contact from './components/Contact';
-
-function Cart() {
-  return (
-    <Div>
-      <h1>Cart</h1>
-    </Div>
-  );
-}
 
 function App() {
   return (

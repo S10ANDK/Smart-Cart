@@ -18,7 +18,7 @@ function GetIndividualProduct() {
 
   const { addToCart } = useCart();
   const addToCarty = () => {
-    addToCart(products.id);
+    addToCart(products);
   };
 
   if (isLoading) {
