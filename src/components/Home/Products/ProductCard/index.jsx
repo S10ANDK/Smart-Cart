@@ -3,9 +3,6 @@ import * as S from './index.styled';
 import BaseButton from '../../../defaultStyles/BaseButton';
 import GetStarRating from '../../../Stars';
 
-// console.log
-//     ( "Intentional Error" );;;
-
 const ProductCard = ({ product }) => {
   return (
     <S.ProductCardContainer to={`/products/${product.id}`}>
@@ -22,7 +19,6 @@ const ProductCard = ({ product }) => {
           </S.PercentageOff>
         )}
       </S.PercentageOffContainer>
-
       <h2>{product.title}</h2>
       <S.ProductImageSmall src={product.imageUrl} alt={product.title} />
       <S.RatingContainer>

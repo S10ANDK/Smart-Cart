@@ -5,7 +5,7 @@ import { faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons';
 
 const GetStarRating = (rating) => {
   if (rating === 0) {
-    return <p>Not yet rated</p>;
+    return 'Not yet rated';
   }
 
   const fullStars = Math.floor(rating);
