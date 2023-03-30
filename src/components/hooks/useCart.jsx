@@ -5,7 +5,10 @@ const useCartStore = create((set) => ({
   cart: [],
   isLoading: false,
   hasErrors: false,
-  updateCart: (updatedCart) => set(() => ({ cart: updatedCart })),
+  removeProductFromCart: (productId) =>
+    set((state) => ({
+      cart: state.cart.filter((product) => product.id !== productId),
+    })),
   addProductToCart: (product) =>
     set((state) => ({ cart: [...state.cart, product] })),
   clearCart: () => set({ cart: [] }),
@@ -30,11 +33,18 @@ function useCart() {
   const hasErrors = useCartStore((state) => state.hasErrors);
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
-  const updateCart = useCartStore((state) => state.updateCart);
 
   function addToCart(id) {
     console.log('Add to cart', id);
     addProductToCart(id);
+  }
+
+  const removeProductFromCart = useCartStore(
+    (state) => state.removeProductFromCart
+  );
+
+  function removeFromCart(id) {
+    removeProductFromCart(id);
   }
 
   return {
@@ -42,8 +52,8 @@ function useCart() {
     cart,
     isLoading,
     hasErrors,
-    updateCart,
     addToCart,
+    removeFromCart,
     clearCart,
     fetchProducts,
   };

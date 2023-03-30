@@ -3,7 +3,7 @@ import Div from '../defaultStyles/Div';
 import { useCart } from '../hooks/useCart';
 
 function Cart() {
-  const { cart, clearCart } = useCart();
+  const { cart, clearCart, removeFromCart } = useCart();
 
   const countQuantities = (cart) => {
     const cartWithQuantities = [];
@@ -43,6 +43,7 @@ function Cart() {
             <p>Price: {item.discountedPrice} NOK</p>
             <p>Quantity: {item.quantity}</p>
             <p>Total: {item.discountedPrice * item.quantity} NOK</p>
+            <button onClick={() => removeFromCart(item.id)}>Remove</button>
           </div>
         ))
       )}
