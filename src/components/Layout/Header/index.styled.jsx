@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Header = styled.header`
   background: ${(props) => props.theme.color.primary};
@@ -34,6 +34,8 @@ export const HeaderContentWrapper = styled.div`
 export const LogoAndNavWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 1000px) {
     flex-direction: row-reverse;
@@ -44,10 +46,19 @@ export const LogoAndNavWrapper = styled.div`
 
 export const Logo = styled.img`
   margin: 10px 20px;
-  width: 200px;
+  width: 160px;
   cursor: pointer;
 
+  @media (min-width: 380px) {
+    width: 180px;
+  }
+
+  @media (min-width: 440px) {
+    width: 200px;
+  }
+
   @media (min-width: 1000px) {
+    width: 200px;
     margin: 10px 0px 10px 30px;
   }
 `;
@@ -75,6 +86,21 @@ export const CartWrapper = styled.div`
   }
 `;
 
+export const CartCount = styled.p`
+  background: ${(props) => props.theme.color.accentOne};
+  color: ${(props) => props.theme.color.white};
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 50px;
+  display: inline-block;
+  ${({ updated }) =>
+    updated &&
+    css`
+      animation: ${scaleAnimation} 0.3s ease-in-out;
+    `}
+`;
+
 export const CartIcon = styled.img`
   margin: 10px;
   width: 35px;
@@ -91,5 +117,17 @@ export const CartIcon = styled.img`
     :hover {
       transform: rotate(-10deg);
     }
+  }
+`;
+
+const scaleAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 `;

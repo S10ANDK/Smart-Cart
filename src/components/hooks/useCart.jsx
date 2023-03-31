@@ -32,6 +32,7 @@ function useCart() {
   const isLoading = useCartStore((state) => state.isLoading);
   const hasErrors = useCartStore((state) => state.hasErrors);
   const cart = useCartStore((state) => state.cart);
+  const cartCount = useCartStore((state) => state.cart.length);
   const clearCart = useCartStore((state) => state.clearCart);
 
   function addToCart(id) {
@@ -54,6 +55,7 @@ function useCart() {
     hasErrors,
     addToCart,
     removeFromCart,
+    cartCount,
     clearCart,
     fetchProducts,
   };
