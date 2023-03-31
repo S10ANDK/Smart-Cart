@@ -1,6 +1,7 @@
 import React from 'react';
 import Div from '../defaultStyles/Div';
 import { useCart } from '../hooks/useCart';
+import * as S from './index.styled';
 
 function Cart() {
   const { cart, clearCart, removeFromCart } = useCart();
@@ -20,6 +21,14 @@ function Cart() {
     });
 
     return cartWithQuantities;
+  };
+
+  const calculateTotalPrice = (cartItems) => {
+    return cartItems.reduce(
+      (accumulator, currentItem) =>
+        accumulator + currentItem.discountedPrice * currentItem.quantity,
+      0
+    );
   };
 
   const handleCheckout = () => {
@@ -47,7 +56,12 @@ function Cart() {
           </div>
         ))
       )}
-      {cart.length > 0 && <button onClick={handleCheckout}>Checkout</button>}
+      <p>Total price: {calculateTotalPrice(cartItemsWithQuantity)} NOK</p>
+      {cart.length > 0 && (
+        <S.CheckoutButton to={'/checkout-success'} onClick={handleCheckout}>
+          Checkout
+        </S.CheckoutButton>
+      )}
     </Div>
   );
 }
