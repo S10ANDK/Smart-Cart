@@ -49,3 +49,9 @@ export const FormErrorMessage = styled.p`
   color: #963a3a;
   margin: 0px 5px 10px;
 `;
+
+export const ConfirmationMessage = styled.p`
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 50px;
+`;
