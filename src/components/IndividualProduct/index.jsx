@@ -8,7 +8,8 @@ import GetStarRating from '../Stars';
 import { useCart } from '../hooks/useCart';
 
 function GetIndividualProduct() {
-  const { products, fetchProducts, isLoading, hasErrors } = useCart();
+  const { products, fetchProducts, isLoading, hasErrors, addToCart } =
+    useCart();
 
   let { id } = useParams();
 
@@ -16,8 +17,7 @@ function GetIndividualProduct() {
     fetchProducts(`${API_URL}/${id}`);
   }, []);
 
-  const { addToCart } = useCart();
-  const addToCarty = () => {
+  const onAddToCart = () => {
     addToCart(products);
   };
 
@@ -28,10 +28,6 @@ function GetIndividualProduct() {
   if (hasErrors) {
     return <div>There was an error.</div>;
   }
-
-  // if (product.length <= 0) {
-  //   return <div>No products to show.</div>;
-  // }
 
   return (
     <>
@@ -83,7 +79,7 @@ function GetIndividualProduct() {
           <S.Heading>Description</S.Heading>
           <S.DescriptionBody>{products.description}</S.DescriptionBody>
           <S.AddToCartContainer>
-            <S.AddToCartButton onClick={addToCarty}>
+            <S.AddToCartButton onClick={onAddToCart}>
               Add to Cart
             </S.AddToCartButton>
           </S.AddToCartContainer>
