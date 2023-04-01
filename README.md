@@ -20,7 +20,7 @@ This is a website developed as part of a school project at Noroff - School of te
 
 ## Website Link
 
-placeholder.
+https://cart-smartcart.netlify.app/
 
 ## Contact
 
