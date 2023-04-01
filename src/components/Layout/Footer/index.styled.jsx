@@ -8,8 +8,14 @@ const StyledFooter = styled.footer`
   background: ${(props) => props.theme.color.secondary};
 
   p {
+    font-family: Montserrat, sans-serif;
     color: ${(props) => props.theme.color.white};
     text-align: center;
+  }
+
+  p span {
+    display: block;
+    margin-top: 10px;
   }
 `;
 

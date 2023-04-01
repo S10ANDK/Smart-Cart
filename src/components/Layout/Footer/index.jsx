@@ -5,7 +5,9 @@ function Footer() {
   return (
     <>
       <StyledFooter>
-        <p>Created with React by: Stian Dille Kornbakk</p>
+        <p>
+          Created with React by: <span>Stian Dille Kornbakk</span>
+        </p>
       </StyledFooter>
     </>
   );
