@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import StyledSearchForm from './index.styled';
 import _debounce from 'lodash/debounce';
 
 const Search = ({ onSearch, minLength }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const searchRef = useRef();
 
   const debouncedSearch = _debounce((searchTerm) => {
     onSearch(searchTerm);
@@ -19,12 +20,14 @@ const Search = ({ onSearch, minLength }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    searchRef.current.blur();
   };
 
   return (
     <div>
       <StyledSearchForm onSubmit={handleSubmit}>
         <input
+          ref={searchRef}
           type="search"
           value={searchTerm}
           onChange={handleChange}
