@@ -17,7 +17,6 @@ const useCartStore = create((set) => ({
     try {
       const response = await fetch(url);
       const json = await response.json();
-      console.log(json);
       set((state) => ({ products: (state.products = json), isLoading: false }));
     } catch (error) {
       set(() => ({ hasErrors: true, isLoading: false }));
@@ -36,7 +35,6 @@ function useCart() {
   const clearCart = useCartStore((state) => state.clearCart);
 
   function addToCart(id) {
-    console.log('Add to cart', id);
     addProductToCart(id);
   }
 
