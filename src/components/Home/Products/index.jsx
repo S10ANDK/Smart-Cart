@@ -3,37 +3,7 @@ import { API_URL } from '../../../constants/urls';
 import * as S from './index.styled';
 import ProductCard from './ProductCard';
 import LoadingIndicator from '../../defaultStyles/LoadingIndicator';
-import _debounce from 'lodash/debounce';
-import StyledSearchForm from './Search/index.styled';
-
-const Search = ({ onSearch, minLength }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const debouncedSearch = _debounce((searchTerm) => {
-    onSearch(searchTerm);
-  }, 300);
-
-  const handleChange = (event) => {
-    const newSearchTerm = event.target.value;
-    setSearchTerm(newSearchTerm);
-    if (newSearchTerm.length >= minLength || newSearchTerm.length === 0) {
-      debouncedSearch(newSearchTerm);
-    }
-  };
-
-  return (
-    <div>
-      <StyledSearchForm>
-        <input
-          type="search"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Search"
-        />
-      </StyledSearchForm>
-    </div>
-  );
-};
+import Search from './Search';
 
 function ProductsDisplayed() {
   const [products, setProducts] = useState([]);
