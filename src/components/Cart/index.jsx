@@ -70,9 +70,6 @@ function Cart() {
                   </S.RemoveButton>
                   <p>Quantity: {item.quantity}</p>
                   <S.Price>{item.discountedPrice} NOK</S.Price>
-                  {/* <p>
-                Total: {(item.discountedPrice * item.quantity).toFixed(2)} NOK
-              </p> */}
                 </S.ProductInfoContainer>
               </S.ProductContainer>
             ))

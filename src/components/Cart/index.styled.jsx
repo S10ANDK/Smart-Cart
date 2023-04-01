@@ -17,8 +17,7 @@ export const ProductsList = styled.div`
 `;
 
 export const Message = styled.p`
-  /* background: ${(props) => props.theme.color.accentTwo}; */
-  background: #636363;
+  background: ${(props) => props.theme.color.accentTwo};
   color: ${(props) => props.theme.color.white};
   width: 200px;
   font-weight: 600;
