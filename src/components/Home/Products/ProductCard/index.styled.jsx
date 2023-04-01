@@ -10,22 +10,6 @@ export const ProductCardContainer = styled(Link)`
   margin: auto;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
-  transition: 0.4s ease-in-out;
-  animation: product-fade-effect ease 1.2s forwards;
-
-  :hover {
-    transform: translateX(5px) translateY(-7px);
-    box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 0.03);
-  }
-
-  @keyframes product-fade-effect {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 
 export const PercentageOffContainer = styled.div`
