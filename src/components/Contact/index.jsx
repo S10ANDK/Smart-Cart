@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import * as S from './index.styled';
+import { Helmet } from 'react-helmet';
 
 const schema = yup
   .object({
@@ -32,6 +33,13 @@ function Contact() {
 
   return (
     <>
+      <Helmet>
+        <title>Smart Cart | Contact</title>
+        <meta
+          name="description"
+          content="Feel free to get in contact with us at Smart Cart"
+        />
+      </Helmet>
       <S.ContactDiv>
         <h1>Contact Form</h1>
 

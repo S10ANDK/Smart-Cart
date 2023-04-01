@@ -6,6 +6,7 @@ import LoadingIndicator from '../defaultStyles/LoadingIndicator';
 import * as S from './index.styled';
 import GetStarRating from '../Stars';
 import { useCart } from '../hooks/useCart';
+import { Helmet } from 'react-helmet';
 
 function GetIndividualProduct() {
   const { products, fetchProducts, isLoading, hasErrors, addToCart } =
@@ -31,6 +32,10 @@ function GetIndividualProduct() {
 
   return (
     <>
+      <Helmet>
+        <title>{`Smart Cart | ${products.title}`}</title>
+        <meta name="description" content={products.title} />
+      </Helmet>
       <h1>{products.title}</h1>
       <S.IndividualProductContainer>
         <S.TagsAndImageContainer>
