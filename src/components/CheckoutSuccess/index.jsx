@@ -1,13 +1,20 @@
 import React from 'react';
 import Div from '../defaultStyles/Div';
-import { Link } from 'react-router-dom';
+import * as S from './index.styled';
 
 function CheckoutSuccess() {
   return (
     <Div>
       <h1>Success!</h1>
-      <p>You have successfully ordered your products!</p>
-      <Link to={'/'}>Continue shopping</Link>
+      <S.SuccessContainer>
+        <S.SuccessMessage>
+          Congratulations!{' '}
+          <span>You have successfully completed your order.</span>
+        </S.SuccessMessage>
+        <S.ContinueShoppingLink to={'/'}>
+          Continue shopping
+        </S.ContinueShoppingLink>
+      </S.SuccessContainer>
     </Div>
   );
 }

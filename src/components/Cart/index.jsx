@@ -32,7 +32,12 @@ function Cart() {
   };
 
   const handleCheckout = () => {
-    console.log('Cart contents:', cart);
+    console.log(
+      'Cart contents:',
+      cart,
+      'total price:',
+      calculateTotalPrice(cartItemsWithQuantity).toFixed(2)
+    );
     clearCart();
   };
 
@@ -41,51 +46,61 @@ function Cart() {
   return (
     <Div>
       <h1>Cart</h1>
-      <S.ProductsList>
-        {cart.length > 0 && (
-          <S.ClearCartButtonContainer>
-            <S.ClearCartButton onClick={clearCart}>
-              Clear cart
-            </S.ClearCartButton>
-          </S.ClearCartButtonContainer>
-        )}
-        {cartItemsWithQuantity.length === 0 ? (
-          <S.Message>No products in the cart</S.Message>
-        ) : (
-          cartItemsWithQuantity.map((item) => (
-            <S.ProductContainer key={item.id}>
-              <S.ProductHeadingAndImageContainer>
-                <S.ProductHeading>{item.title}</S.ProductHeading>
-                <S.ProductImage src={item.imageUrl}></S.ProductImage>
-              </S.ProductHeadingAndImageContainer>
-              <S.ProductInfoContainer>
-                <S.RemoveButton onClick={() => removeFromCart(item.id)}>
-                  x
-                </S.RemoveButton>
-                <p>Quantity: {item.quantity}</p>
-                <S.Price>Price: {item.discountedPrice} NOK</S.Price>
-                {/* <p>
+      <S.CartContainer>
+        <S.ProductsList>
+          {cart.length > 0 && (
+            <S.ClearCartButtonContainer>
+              <S.ClearCartButton onClick={clearCart}>
+                Clear cart
+              </S.ClearCartButton>
+            </S.ClearCartButtonContainer>
+          )}
+          {cartItemsWithQuantity.length === 0 ? (
+            <S.Message>No products in the cart</S.Message>
+          ) : (
+            cartItemsWithQuantity.map((item) => (
+              <S.ProductContainer key={item.id}>
+                <S.ProductHeadingAndImageContainer>
+                  <S.ProductHeading>{item.title}</S.ProductHeading>
+                  <S.ProductImage src={item.imageUrl}></S.ProductImage>
+                </S.ProductHeadingAndImageContainer>
+                <S.ProductInfoContainer>
+                  <S.RemoveButton onClick={() => removeFromCart(item.id)}>
+                    x
+                  </S.RemoveButton>
+                  <p>Quantity: {item.quantity}</p>
+                  <S.Price>{item.discountedPrice} NOK</S.Price>
+                  {/* <p>
                 Total: {(item.discountedPrice * item.quantity).toFixed(2)} NOK
               </p> */}
-              </S.ProductInfoContainer>
-            </S.ProductContainer>
-          ))
-        )}
-      </S.ProductsList>
+                </S.ProductInfoContainer>
+              </S.ProductContainer>
+            ))
+          )}
+        </S.ProductsList>
 
-      {cart.length > 0 && (
-        <>
-          <p>
-            Total price: {calculateTotalPrice(cartItemsWithQuantity).toFixed(2)}{' '}
-            NOK
-          </p>
-          <S.CheckoutButtonContainer>
-            <S.CheckoutButton to={'/checkout-success'} onClick={handleCheckout}>
-              Checkout
-            </S.CheckoutButton>
-          </S.CheckoutButtonContainer>
-        </>
-      )}
+        {cart.length > 0 && (
+          <>
+            <S.TotalContainer>
+              <S.TotalPrice>
+                Total price:
+                <span>
+                  {' '}
+                  {calculateTotalPrice(cartItemsWithQuantity).toFixed(2)} NOK
+                </span>
+              </S.TotalPrice>
+              <S.CheckoutButtonContainer>
+                <S.CheckoutButton
+                  to={'/checkout-success'}
+                  onClick={handleCheckout}
+                >
+                  Checkout
+                </S.CheckoutButton>
+              </S.CheckoutButtonContainer>
+            </S.TotalContainer>
+          </>
+        )}
+      </S.CartContainer>
     </Div>
   );
 }
