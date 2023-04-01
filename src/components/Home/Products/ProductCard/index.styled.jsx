@@ -10,6 +10,11 @@ export const ProductCardContainer = styled(Link)`
   margin: auto;
   border: 1px solid #bdbdbd;
   border-radius: 10px;
+  transition: 0.2s ease-in-out;
+
+  :hover {
+    border: 1px solid #8c8c8c;
+  }
 `;
 
 export const PercentageOffContainer = styled.div`
