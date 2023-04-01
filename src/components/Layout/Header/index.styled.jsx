@@ -87,7 +87,7 @@ export const CartWrapper = styled.div`
 `;
 
 export const CartCount = styled.p`
-  background: ${(props) => props.theme.color.accentOne};
+  background: ${(props) => props.theme.color.accentTwo};
   color: ${(props) => props.theme.color.white};
   font-size: 0.9rem;
   font-weight: 800;
