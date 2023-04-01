@@ -23,7 +23,7 @@ export const IndividualProductContainer = styled(Div)`
   @media (min-width: 1400px) {
     max-width: 1400px;
     column-gap: 60px;
-    grid-template-rows: 0.5fr 0.3fr;
+    grid-template-rows: 0.3fr 0.3fr;
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -59,7 +59,7 @@ export const ProductImage = styled.img`
 
   @media (min-width: 1400px) {
     max-width: 650px;
-    max-height: 650px;
+    max-height: 500px;
   }
 `;
 
