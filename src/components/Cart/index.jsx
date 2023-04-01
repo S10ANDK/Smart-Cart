@@ -7,26 +7,28 @@ function Cart() {
   const { cart, clearCart, removeFromCart } = useCart();
 
   const countQuantities = (cart) => {
-    const cartWithQuantities = [];
+    const cartProductQuantity = [];
     cart.forEach((item) => {
-      const existingItem = cartWithQuantities.find(
+      const existingItem = cartProductQuantity.find(
         (product) => product.id === item.id
       );
 
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
-        cartWithQuantities.push({ ...item, quantity: 1 });
+        cartProductQuantity.push({ ...item, quantity: 1 });
       }
     });
 
-    return cartWithQuantities;
+    return cartProductQuantity;
   };
 
-  const calculateTotalPrice = (cartItems) => {
-    return cartItems.reduce(
-      (accumulator, currentItem) =>
-        accumulator + currentItem.discountedPrice * currentItem.quantity,
+  const cartList = countQuantities(cart);
+
+  const calculateTotalPrice = (cartProduct) => {
+    return cartProduct.reduce(
+      (accumulator, currentProduct) =>
+        accumulator + currentProduct.discountedPrice * currentProduct.quantity,
       0
     );
   };
@@ -36,12 +38,10 @@ function Cart() {
       'Cart contents:',
       cart,
       'total price:',
-      calculateTotalPrice(cartItemsWithQuantity).toFixed(2)
+      calculateTotalPrice(cartList).toFixed(2)
     );
     clearCart();
   };
-
-  const cartItemsWithQuantity = countQuantities(cart);
 
   return (
     <Div>
@@ -55,10 +55,10 @@ function Cart() {
               </S.ClearCartButton>
             </S.ClearCartButtonContainer>
           )}
-          {cartItemsWithQuantity.length === 0 ? (
+          {cartList.length === 0 ? (
             <S.Message>No products in the cart</S.Message>
           ) : (
-            cartItemsWithQuantity.map((item) => (
+            cartList.map((item) => (
               <S.ProductContainer key={item.id}>
                 <S.ProductHeadingAndImageContainer>
                   <S.ProductHeading>{item.title}</S.ProductHeading>
@@ -81,10 +81,7 @@ function Cart() {
             <S.TotalContainer>
               <S.TotalPrice>
                 Total price:
-                <span>
-                  {' '}
-                  {calculateTotalPrice(cartItemsWithQuantity).toFixed(2)} NOK
-                </span>
+                <span> {calculateTotalPrice(cartList).toFixed(2)} NOK</span>
               </S.TotalPrice>
               <S.CheckoutButtonContainer>
                 <S.CheckoutButton
