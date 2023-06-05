@@ -1,8 +1,14 @@
 # Smart Cart
 
-## E-commerce site built with React
+![Image of the Smart Cart website](src/assets/readme/smartcart.png)
 
-This is a website developed as part of a school project at Noroff - School of technology.
+This is a website developed as part of a school project at Noroff - School of technology and digital media. This is a website concept for letting users add items to a cart.
+
+## Description
+
+- The aim for this website is to let the user buy products by having a dynamic shopping cart.
+- Users can add and remove products to and from the shopping cart.
+- The demographic this website is targeting are people who wants to buy miscellaneous products.
 
 ## Built With
 
@@ -12,11 +18,25 @@ This is a website developed as part of a school project at Noroff - School of te
 - Yup
 - API provided by the school
 
-## How to Configure Project Locally
+## Getting Started
 
-- Make sure to have Node.js installed
-- To install dependencies: run npm i
-- To start development server: run npm start
+### Installing
+
+Make sure to have Node.js installed.
+
+To install dependencies:
+
+<pre>
+npm i
+</pre>
+
+### Running
+
+To run development server:
+
+<pre>
+npm run start
+</pre>
 
 ## Website Link
 

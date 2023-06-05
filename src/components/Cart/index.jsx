@@ -25,6 +25,7 @@ function Cart() {
   };
 
   const cartList = countQuantities(cart);
+  console.log(cartList);
 
   const calculateTotalPrice = (cartProduct) => {
     return cartProduct.reduce(
